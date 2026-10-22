@@ -608,15 +608,20 @@ class FreelanceFlowController extends Controller
             }
 
             if (!DB::table('tracker_events')->where('client_id', $id)->exists()) {
-                for ($i = 0; $i < 24; $i++) {
-                    DB::table('tracker_events')->insert([
-                        'id' => (string) Str::uuid(),
-                        'client_id' => $id,
-                        'event_type' => 'page_view',
-                        'path' => collect(['/', '/pricing', '/work', '/contact', '/dashboard'])->random(),
-                        'created_at' => now()->subHours(rand(1, 160)),
-                        'updated_at' => now(),
-                    ]);
+                $paths = ['/', '/pricing', '/work', '/contact', '/dashboard'];
+                $hourlyCounts = [1, 0, 1, 1, 2, 1, 0, 3, 1, 0, 2, 1, 0, 1, 2, 0, 3, 1, 0, 2, 1, 0, 1, 0];
+                $pathIndex = 0;
+                foreach ($hourlyCounts as $hourIndex => $count) {
+                    for ($visit = 0; $visit < $count; $visit++) {
+                        DB::table('tracker_events')->insert([
+                            'id' => (string) Str::uuid(),
+                            'client_id' => $id,
+                            'event_type' => 'page_view',
+                            'path' => $paths[$pathIndex++ % count($paths)],
+                            'created_at' => now()->subHours(23 - $hourIndex)->subMinutes(rand(10, 45)),
+                            'updated_at' => now(),
+                        ]);
+                    }
                 }
             }
             if (!DB::table('improvement_requests')->where('client_id', $id)->exists()) DB::table('improvement_requests')->insert([

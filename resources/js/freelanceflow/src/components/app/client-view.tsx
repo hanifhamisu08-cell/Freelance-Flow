@@ -39,21 +39,32 @@ export function ClientView() {
   const { selectedClientId, setView, openClient, bump, toast, refreshTick } = useApp();
   const [data, setData] = useState<ClientDetail | null>(null);
   const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const [generating, setGenerating] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
     if (!selectedClientId) return;
     setLoading(true);
+    setLoadError(null);
+    setData(null);
     api.getClient(selectedClientId).then((r) => {
       if (cancelled) return;
       setData({ client: r.client, privacy: r.privacy, events: r.events, metrics: r.metrics, requests: r.requests, insights: r.insights, actions: r.actions, reports: r.reports });
-    }).catch((e) => toast((e as Error).message, "destructive")).finally(() => { if (!cancelled) setLoading(false); });
+    }).catch((e) => {
+      if (cancelled) return;
+      const message = (e as Error).message || "Could not load this client.";
+      setLoadError(message);
+      toast(message, "destructive");
+    }).finally(() => { if (!cancelled) setLoading(false); });
     return () => { cancelled = true; };
   }, [selectedClientId, refreshTick, toast]);
 
-  if (loading || !data) {
+  if (loading) {
     return <Panel className="flex items-center gap-2 py-8 text-muted-foreground"><Spinner /> Loading…</Panel>;
+  }
+  if (loadError || !data) {
+    return <Panel className="flex flex-col items-start gap-3 py-8 text-muted-foreground"><p>{loadError ?? "Choose a client to view its dashboard."}</p><Button variant="outline" size="sm" onClick={() => bump()}>Retry</Button></Panel>;
   }
 
   const { client, metrics, events, insights } = data;
@@ -102,7 +113,7 @@ curl_exec($ch); curl_close($ch);
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-2 anim-rise">
-        <button onClick={() => setView("dashboard")} className="group flex w-fit items-center gap-1 text-[11px] text-muted-foreground transition-colors hover:text-foreground">
+        <button onClick={() => { if (window.history.state?.freelanceFlow) window.history.back(); else setView("dashboard"); }} className="group flex w-fit items-center gap-1 text-[11px] text-muted-foreground transition-colors hover:text-foreground">
           <ArrowLeft className="h-3 w-3 transition-transform group-hover:-translate-x-0.5" /> Back
         </button>
         <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">

@@ -38,11 +38,23 @@ export default function Home() {
   }, [setToastFn]);
 
   useEffect(() => {
-    api
-      .me()
-      .then((r) => setUser(r.user))
+    window.history.replaceState({ freelanceFlow: true, view: "auth" }, "", window.location.pathname);
+    const onPopState = (event: PopStateEvent) => {
+      if (useApp.getState().user) useApp.getState().restoreNavigation(event.state);
+    };
+    window.addEventListener("popstate", onPopState);
+    api.me()
+      .then(async (r) => {
+        if (r.user) {
+          const result = await api.logout();
+          const csrf = document.querySelector<HTMLMetaElement>('meta[name="csrf-token"]');
+          if (csrf) csrf.content = result.csrfToken;
+        }
+        setUser(null);
+      })
       .catch(() => setUser(null))
       .finally(() => setLoading(false));
+    return () => window.removeEventListener("popstate", onPopState);
   }, [setUser]);
 
   if (loading) {
