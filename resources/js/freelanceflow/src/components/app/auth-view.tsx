@@ -37,6 +37,8 @@ export function AuthView() {
         mode === "login"
           ? await api.login(email, password)
           : await api.register(email, password, name);
+      const csrfMeta = document.querySelector<HTMLMetaElement>('meta[name="csrf-token"]');
+      if (csrfMeta) csrfMeta.content = r.csrfToken;
       setUser(r.user);
       toast(`Welcome, ${r.user.name}.`);
     } catch (err) {
@@ -241,10 +243,12 @@ export function AuthView() {
                   setBusy(true);
                   try {
                     const r = await api.login("founder@freelanceflow.app", "prototype123");
+                    const csrfMeta = document.querySelector<HTMLMetaElement>('meta[name="csrf-token"]');
+                    if (csrfMeta) csrfMeta.content = r.csrfToken;
                     setUser(r.user);
                     toast(`Welcome, ${r.user.name}.`);
-                  } catch {
-                    toast("Freelancer account not found. Register first.", "destructive");
+                  } catch (err) {
+                    toast((err as Error).message || "Unable to sign in to the freelancer account.", "destructive");
                   } finally {
                     setBusy(false);
                   }
@@ -262,10 +266,12 @@ export function AuthView() {
                   setBusy(true);
                   try {
                     const r = await api.login("owner@demo.com", "owner123");
+                    const csrfMeta = document.querySelector<HTMLMetaElement>('meta[name="csrf-token"]');
+                    if (csrfMeta) csrfMeta.content = r.csrfToken;
                     setUser(r.user);
                     toast(`Welcome, ${r.user.name}.`);
-                  } catch {
-                    toast("Owner account not seeded yet. Use the freelancer account first, then seed.", "destructive");
+                  } catch (err) {
+                    toast((err as Error).message || "Unable to sign in to the business owner account.", "destructive");
                   } finally {
                     setBusy(false);
                   }

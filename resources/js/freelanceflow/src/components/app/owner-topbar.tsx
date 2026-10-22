@@ -62,6 +62,18 @@ export function OwnerTopBar() {
     .slice(0, 2)
     .toUpperCase();
 
+  const handleLogout = async () => {
+    try {
+      const result = await api.logout();
+      const csrfMeta = document.querySelector<HTMLMetaElement>('meta[name="csrf-token"]');
+      if (csrfMeta) csrfMeta.content = result.csrfToken;
+      useApp.getState().setUser(null);
+      setMenuOpen(false);
+    } catch (err) {
+      toast((err as Error).message, "destructive");
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-panel">
       {/* Main bar */}
@@ -117,10 +129,7 @@ export function OwnerTopBar() {
           </div>
 
           <button
-            onClick={async () => {
-              await api.logout().catch(() => {});
-              useApp.getState().setUser(null);
-            }}
+            onClick={handleLogout}
             className="flex items-center gap-1.5 rounded-full bg-red-500/10 px-3 py-1.5 text-[11px] font-medium text-red-400 transition-colors hover:bg-red-500/20 hover:text-red-300"
             title="Log out and switch role"
           >
@@ -160,11 +169,7 @@ export function OwnerTopBar() {
             );
           })}
           <button
-            onClick={async () => {
-              await api.logout().catch(() => {});
-              useApp.getState().setUser(null);
-              setMenuOpen(false);
-            }}
+            onClick={handleLogout}
             className="flex w-full items-center gap-2 rounded-lg bg-red-500/10 px-3 py-2 text-sm font-medium text-red-400"
           >
             <LogOut className="h-4 w-4" />

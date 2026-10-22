@@ -56,7 +56,9 @@ export function TopBar() {
   };
 
   const handleLogout = async () => {
-    await api.logout();
+    const result = await api.logout();
+    const csrfMeta = document.querySelector<HTMLMetaElement>('meta[name="csrf-token"]');
+    if (csrfMeta) csrfMeta.content = result.csrfToken;
     useApp.getState().setUser(null);
   };
 

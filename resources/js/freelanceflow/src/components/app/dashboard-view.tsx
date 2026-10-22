@@ -40,6 +40,7 @@ import { BrandedLogo } from "@/components/app/branded-logo";
 export function DashboardView() {
   const { openClient, bump, toast, refreshTick } = useApp();
   const [clients, setClients] = useState<ClientListItem[] | null>(null);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const [creating, setCreating] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -48,9 +49,17 @@ export function DashboardView() {
     api
       .listClients()
       .then((r) => {
-        if (!cancelled) setClients(r.clients);
+        if (!cancelled) {
+          setClients(r.clients);
+          setLoadError(null);
+        }
       })
-      .catch((e) => toast((e as Error).message, "destructive"));
+      .catch((e) => {
+        if (!cancelled) {
+          setLoadError((e as Error).message);
+          toast((e as Error).message, "destructive");
+        }
+      });
     return () => { cancelled = true; };
   }, [refreshTick, toast]);
 
@@ -58,7 +67,9 @@ export function DashboardView() {
     try {
       const r = await api.listClients();
       setClients(r.clients);
+      setLoadError(null);
     } catch (e) {
+      setLoadError((e as Error).message);
       toast((e as Error).message, "destructive");
     }
   };
@@ -127,7 +138,12 @@ export function DashboardView() {
         </Button>
       </Panel>
 
-      {clients === null ? (
+      {clients === null && loadError ? (
+        <Panel className="flex flex-col items-center gap-3 py-8 text-center text-muted-foreground">
+          <span className="text-xs">Couldn’t load client dashboards. Try again.</span>
+          <Button variant="outline" size="sm" onClick={reload} className="h-8 text-xs">Retry</Button>
+        </Panel>
+      ) : clients === null ? (
         <Panel className="flex items-center gap-2 py-8 text-muted-foreground">
           <Spinner /> Loading clients…
         </Panel>

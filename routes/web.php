@@ -25,5 +25,12 @@ Route::prefix('api')->controller(FreelanceFlowController::class)->group(function
     Route::match(['get', 'patch'], '/reports/{id}', 'report');
     Route::get('/stats', 'stats');
     Route::get('/owner/stats', 'ownerStats');
+    Route::get('/owner/finance', 'ownerFinance');
+    Route::get('/owner/invoices', 'ownerInvoices');
+    Route::get('/owner/budget', 'ownerBudget');
+    Route::get('/owner/security', 'ownerSecurity');
+    Route::get('/owner/uptime', 'ownerUptime');
+    Route::get('/owner/requests', 'ownerRequests');
+    Route::get('/insights', 'insights');
     Route::post('/seed', 'seed');
 });

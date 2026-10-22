@@ -14,26 +14,34 @@ export function IntelligenceView() {
   const [clients, setClients] = useState<ClientListItem[]>([]);
   const [filterId, setFilterId] = useState<string>("all");
   const [insights, setInsights] = useState<Insight[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState(false);
   const [generating, setGenerating] = useState(false);
   const [stats, setStats] = useState<{ total: number; critical: number; warnings: number } | null>(null);
 
   useEffect(() => {
     let cancelled = false;
+    setLoading(true);
+    setLoadError(false);
     (async () => {
       try {
         const cl = await api.listClients();
         if (cancelled) return;
         setClients(cl.clients);
-        const all: Insight[] = [];
-        for (const c of cl.clients) {
-          const r = await api.getClient(c.id);
-          all.push(...r.insights);
-        }
+        const result = await api.listInsights();
         if (cancelled) return;
+        const all = result.insights;
         all.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
         setInsights(all);
         setStats({ total: all.length, critical: all.filter((i) => i.severity === "critical").length, warnings: all.filter((i) => i.severity === "warning").length });
-      } catch (e) { toast((e as Error).message, "destructive"); }
+      } catch (e) {
+        if (!cancelled) {
+          setLoadError(true);
+          toast((e as Error).message, "destructive");
+        }
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
     })();
     return () => { cancelled = true; };
   }, [refreshTick, toast]);
@@ -98,7 +106,14 @@ export function IntelligenceView() {
           </div>
         </div>
 
-        {filtered.length === 0 ? (
+        {loading ? (
+          <div className="flex items-center justify-center gap-2 py-8 text-xs text-muted-foreground"><Spinner /> Loading insights…</div>
+        ) : loadError ? (
+          <div className="flex flex-col items-center gap-3 py-8 text-center text-xs text-muted-foreground">
+            <span>Couldn’t load intelligence data. Try again.</span>
+            <Button variant="outline" size="sm" onClick={bump} className="h-8 text-xs">Retry</Button>
+          </div>
+        ) : filtered.length === 0 ? (
           <EmptyState icon={<Sparkles className="h-5 w-5 text-amber" />} title="No insights yet" body="Run synthesis for any client above." />
         ) : (
           <div className="grid grid-cols-1 gap-2.5 md:grid-cols-2 stagger">

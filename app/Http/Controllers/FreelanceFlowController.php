@@ -44,8 +44,9 @@ class FreelanceFlowController extends Controller
             ['name' => $data['name'], 'password' => Hash::make($data['password']), 'role' => 'freelancer']
         );
         Auth::login($user);
+        $request->session()->regenerate();
 
-        return response()->json(['user' => $this->sessionUser($user)]);
+        return response()->json(['user' => $this->sessionUser($user), 'csrfToken' => $request->session()->token()]);
     }
 
     public function login(Request $request): JsonResponse
@@ -54,8 +55,9 @@ class FreelanceFlowController extends Controller
         if (!Auth::attempt($data)) {
             return response()->json(['error' => 'Invalid credentials.'], 422);
         }
+        $request->session()->regenerate();
 
-        return response()->json(['user' => $this->sessionUser(Auth::user())]);
+        return response()->json(['user' => $this->sessionUser(Auth::user()), 'csrfToken' => $request->session()->token()]);
     }
 
     public function logout(Request $request): JsonResponse
@@ -64,7 +66,7 @@ class FreelanceFlowController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return response()->json(['ok' => true]);
+        return response()->json(['ok' => true, 'csrfToken' => $request->session()->token()]);
     }
 
     public function clients(Request $request): JsonResponse
@@ -342,14 +344,222 @@ class FreelanceFlowController extends Controller
 
     public function ownerStats(): JsonResponse
     {
-        $openCritical = DB::table('security_events')->whereIn('severity', ['high', 'critical'])->where('status', 'open')->count();
+        $user = $this->requireOwner();
+        $clients = DB::table('clients')->where('owner_id', $user->id)->get(['id', 'name']);
+        $ids = $clients->pluck('id')->all();
+        $financial = $ids ? DB::table('financial_records')->whereIn('client_id', $ids)->get() : collect();
+        $security = $ids ? DB::table('security_events')->whereIn('client_id', $ids)->orderByDesc('detected_at')->get() : collect();
+        $uptime = $ids ? DB::table('uptime_records')->whereIn('client_id', $ids)->get() : collect();
+        $invoices = $ids ? DB::table('invoices')->whereIn('client_id', $ids)->get() : collect();
+        $budgets = $ids ? DB::table('budgets')->whereIn('client_id', $ids)->get() : collect();
+
+        $totalRevenue = (float) $financial->where('type', 'revenue')->sum(fn ($r) => (float) $r->amount);
+        $totalExpenses = (float) $financial->where('type', 'expense')->sum(fn ($r) => (float) $r->amount);
+        $openSecurity = $security->filter(fn ($e) => in_array($e->status, ['open', 'investigating'], true));
+        $grade = $this->securityGrade($openSecurity);
+        $upCount = $uptime->where('status', 'up')->count();
+        $uptimePercent = $uptime->isEmpty() ? 100 : round($upCount / $uptime->count() * 100, 2);
+        $clientNames = $clients->pluck('name', 'id');
+        $recentAlerts = $openSecurity->take(5)->map(fn ($e) => [
+            'id' => $e->id, 'title' => $e->title ?: "{$e->type} — {$e->severity}",
+            'severity' => $e->severity, 'status' => $e->status, 'type' => $e->type,
+            'clientName' => $clientNames[$e->client_id] ?? 'Unknown', 'detectedAt' => $e->detected_at,
+        ])->values();
+        $outstanding = $invoices->filter(fn ($i) => in_array($i->status, ['sent', 'overdue'], true));
+        $monthlyRevenue = collect(range(3, 0))->map(function ($monthsAgo) use ($financial) {
+            $month = now()->startOfMonth()->subMonths($monthsAgo);
+            $revenue = $financial->filter(fn ($r) => $r->type === 'revenue' && substr((string) $r->created_at, 0, 7) === $month->format('Y-m'))
+                ->sum(fn ($r) => (float) $r->amount);
+            return ['month' => $month->format('M'), 'revenue' => (float) $revenue];
+        })->values();
+        $clientStats = $clients->map(function ($client) use ($financial, $security, $uptime, $invoices, $budgets) {
+            $clientFinancial = $financial->where('client_id', $client->id);
+            $clientSecurity = $security->where('client_id', $client->id);
+            $clientUptime = $uptime->where('client_id', $client->id);
+            $clientInvoices = $invoices->where('client_id', $client->id);
+            $clientBudgets = $budgets->where('client_id', $client->id);
+            $revenue = (float) $clientFinancial->where('type', 'revenue')->sum(fn ($r) => (float) $r->amount);
+            $expenses = (float) $clientFinancial->where('type', 'expense')->sum(fn ($r) => (float) $r->amount);
+            $open = $clientSecurity->filter(fn ($e) => in_array($e->status, ['open', 'investigating'], true));
+            return [
+                'clientId' => $client->id, 'clientName' => $client->name, 'revenue' => $revenue,
+                'expenses' => $expenses, 'netProfit' => $revenue - $expenses,
+                'activeBugs' => $open->where('type', 'bug')->count(),
+                'uptimePercent' => $clientUptime->isEmpty() ? 100 : round($clientUptime->where('status', 'up')->count() / $clientUptime->count() * 100, 2),
+                'securityScore' => $this->securityGrade($open), 'totalInvoices' => $clientInvoices->count(),
+                'paidInvoices' => $clientInvoices->where('status', 'paid')->count(),
+                'outstandingInvoices' => $clientInvoices->filter(fn ($i) => in_array($i->status, ['sent', 'overdue'], true))->count(),
+                'budgetTotal' => (float) $clientBudgets->sum(fn ($b) => (float) $b->total_budget),
+                'budgetSpent' => (float) $clientBudgets->sum(fn ($b) => (float) $b->spent),
+            ];
+        })->values();
+
+        $gradeMap = ['A' => ['grade' => 'A', 'score' => 95, 'color' => '#22c55e'], 'B' => ['grade' => 'B', 'score' => 80, 'color' => '#84cc16'], 'C' => ['grade' => 'C', 'score' => 65, 'color' => '#eab308'], 'D' => ['grade' => 'D', 'score' => 45, 'color' => '#f97316'], 'F' => ['grade' => 'F', 'score' => 25, 'color' => '#ef4444']];
         return response()->json([
-            'securityScore' => ['grade' => $openCritical ? 'B' : 'A', 'color' => $openCritical ? '#f2a93b' : '#39ff14'],
-            'revenue' => DB::table('financial_records')->where('type', 'revenue')->sum('amount'),
-            'expenses' => DB::table('financial_records')->where('type', 'expense')->sum('amount'),
-            'openBugs' => DB::table('security_events')->where('type', 'bug')->where('status', 'open')->count(),
-            'uptime' => 99.8,
+            'totalRevenue' => $totalRevenue, 'totalExpenses' => $totalExpenses, 'netProfit' => $totalRevenue - $totalExpenses,
+            'activeBugs' => $openSecurity->where('type', 'bug')->count(), 'uptimePercent' => $uptimePercent,
+            'securityScore' => $gradeMap[$grade], 'totalInvoices' => $invoices->count(),
+            'paidInvoices' => $invoices->where('status', 'paid')->count(), 'outstandingInvoices' => $outstanding->count(),
+            'recentAlerts' => $recentAlerts,
+            'outstandingInvoicesList' => $outstanding->map(fn ($i) => [
+                'id' => $i->id, 'clientName' => $clientNames[$i->client_id] ?? 'Unknown',
+                'amount' => (float) $i->amount, 'status' => $i->status, 'dueDate' => $i->due_date ?: 'TBD',
+            ])->values(),
+            'monthlyRevenue' => $monthlyRevenue, 'clientStats' => $clientStats,
         ]);
+    }
+
+    public function ownerFinance(Request $request): JsonResponse
+    {
+        $user = $this->requireOwner();
+        $clients = DB::table('clients')->where('owner_id', $user->id)->get(['id', 'name']);
+        $ids = $clients->pluck('id')->all();
+        $query = DB::table('financial_records')->whereIn('client_id', $ids);
+        $type = $request->query('type');
+        if (in_array($type, ['revenue', 'expense'], true)) $query->where('type', $type);
+        $records = $query->orderByDesc('record_date')->get();
+        $names = $clients->pluck('name', 'id');
+        $all = $ids ? DB::table('financial_records')->whereIn('client_id', $ids)->get() : collect();
+        $monthly = collect(range(5, 0))->map(function ($monthsAgo) use ($all) {
+            $month = now()->startOfMonth()->subMonths($monthsAgo);
+            $rows = $all->filter(fn ($r) => substr((string) $r->record_date, 0, 7) === $month->format('Y-m'));
+            $revenue = (float) $rows->where('type', 'revenue')->sum(fn ($r) => (float) $r->amount);
+            $expenses = (float) $rows->where('type', 'expense')->sum(fn ($r) => (float) $r->amount);
+            return ['month' => $month->format('M y'), 'revenue' => $revenue, 'expenses' => $expenses, 'net' => $revenue - $expenses];
+        })->values();
+        return response()->json([
+            'records' => $records->map(fn ($r) => [
+                'id' => $r->id, 'clientId' => $r->client_id, 'clientName' => $names[$r->client_id] ?? 'Unknown',
+                'type' => $r->type, 'category' => $r->category, 'amount' => (float) $r->amount,
+                'currency' => $r->currency, 'description' => $r->description ?? '', 'recordDate' => $r->record_date,
+                'recurring' => (bool) $r->recurring, 'recurringPeriod' => $r->recurring_period,
+                'invoiceNumber' => $r->invoice_number, 'createdAt' => $r->created_at,
+            ])->values(),
+            'monthly' => $monthly,
+            'totalRevenue' => (float) $all->where('type', 'revenue')->sum(fn ($r) => (float) $r->amount),
+            'totalExpenses' => (float) $all->where('type', 'expense')->sum(fn ($r) => (float) $r->amount),
+        ]);
+    }
+
+    public function ownerInvoices(): JsonResponse
+    {
+        $user = $this->requireOwner();
+        $clients = DB::table('clients')->where('owner_id', $user->id)->get(['id', 'name']);
+        $ids = $clients->pluck('id')->all();
+        $names = $clients->pluck('name', 'id');
+        $invoices = $ids ? DB::table('invoices')->whereIn('client_id', $ids)->orderByDesc('created_at')->get() : collect();
+        $order = ['overdue' => 0, 'sent' => 1, 'draft' => 2, 'paid' => 3];
+        $invoices = $invoices->sort(function ($a, $b) use ($order) {
+            return ($order[$a->status] ?? 99) <=> ($order[$b->status] ?? 99) ?: strcmp($b->created_at, $a->created_at);
+        })->values();
+        return response()->json([
+            'invoices' => $invoices->map(fn ($i) => [
+                'id' => $i->id, 'clientId' => $i->client_id, 'clientName' => $names[$i->client_id] ?? 'Unknown',
+                'amount' => (float) $i->amount, 'currency' => $i->currency, 'status' => $i->status,
+                'dueDate' => $i->due_date, 'paidDate' => $i->paid_date, 'itemsJson' => $i->items_json,
+                'notes' => $i->notes, 'createdAt' => $i->created_at, 'updatedAt' => $i->updated_at,
+            ]),
+            'totalInvoiced' => (float) $invoices->sum(fn ($i) => (float) $i->amount),
+            'paid' => (float) $invoices->where('status', 'paid')->sum(fn ($i) => (float) $i->amount),
+            'outstanding' => (float) $invoices->filter(fn ($i) => in_array($i->status, ['sent', 'overdue'], true))->sum(fn ($i) => (float) $i->amount),
+        ]);
+    }
+
+    public function ownerBudget(): JsonResponse
+    {
+        $user = $this->requireOwner();
+        $clients = DB::table('clients')->where('owner_id', $user->id)->get(['id', 'name']);
+        $ids = $clients->pluck('id')->all();
+        $names = $clients->pluck('name', 'id');
+        $budgets = $ids ? DB::table('budgets')->whereIn('client_id', $ids)->orderByDesc('created_at')->get() : collect();
+        return response()->json(['budgets' => $budgets->map(function ($b) use ($names) {
+            $total = (float) $b->total_budget;
+            $spent = (float) $b->spent;
+            return [
+                'id' => $b->id, 'clientId' => $b->client_id, 'clientName' => $names[$b->client_id] ?? 'Unknown',
+                'totalBudget' => $total, 'spent' => $spent, 'remaining' => $total - $spent,
+                'percentage' => $total > 0 ? round($spent / $total * 100, 2) : 0,
+                'currency' => $b->currency, 'period' => $b->period, 'startDate' => $b->start_date,
+                'endDate' => $b->end_date, 'createdAt' => $b->created_at,
+            ];
+        })->values()]);
+    }
+
+    public function ownerSecurity(Request $request): JsonResponse
+    {
+        $user = $this->requireOwner();
+        $clients = DB::table('clients')->where('owner_id', $user->id)->get(['id', 'name']);
+        $ids = $clients->pluck('id')->all();
+        $names = $clients->pluck('name', 'id');
+        $all = $ids ? DB::table('security_events')->whereIn('client_id', $ids)->orderByDesc('detected_at')->get() : collect();
+        $events = $all->filter(fn ($e) => (!$request->query('severity') || $e->severity === $request->query('severity'))
+            && (!$request->query('status') || $e->status === $request->query('status'))
+            && (!$request->query('type') || $e->type === $request->query('type')))->map(fn ($e) => [
+                'id' => $e->id, 'clientId' => $e->client_id, 'clientName' => $names[$e->client_id] ?? 'Unknown',
+                'type' => $e->type, 'severity' => $e->severity, 'title' => $e->title,
+                'description' => $e->description, 'status' => $e->status,
+                'detectedAt' => $e->detected_at, 'resolvedAt' => $e->resolved_at,
+            ])->values();
+        $scores = $clients->map(function ($client) use ($all) {
+            $grade = $this->securityGrade($all->where('client_id', $client->id)->filter(fn ($e) => in_array($e->status, ['open', 'investigating'], true)));
+            $grades = ['A' => [95, '#22c55e'], 'B' => [80, '#84cc16'], 'C' => [65, '#eab308'], 'D' => [45, '#f97316'], 'F' => [25, '#ef4444']];
+            return ['clientId' => $client->id, 'clientName' => $client->name, 'grade' => $grade, 'score' => $grades[$grade][0], 'color' => $grades[$grade][1]];
+        })->values();
+        return response()->json(['events' => $events, 'scores' => $scores]);
+    }
+
+    public function ownerUptime(): JsonResponse
+    {
+        $user = $this->requireOwner();
+        $clients = DB::table('clients')->where('owner_id', $user->id)->get(['id', 'name']);
+        $ids = $clients->pluck('id')->all();
+        $records = $ids ? DB::table('uptime_records')->whereIn('client_id', $ids)->where('checked_at', '>=', now()->subDays(7))->orderBy('checked_at')->get() : collect();
+        $results = $clients->map(function ($client) use ($records) {
+            $rows = $records->where('client_id', $client->id)->values();
+            $up = $rows->where('status', 'up');
+            $grid = [];
+            foreach ($rows as $row) {
+                if (!$row->checked_at) continue;
+                $checked = Carbon::parse($row->checked_at);
+                $day = ((int) $checked->dayOfWeekIso) - 1;
+                $hour = (int) $checked->format('G');
+                $key = "$day-$hour";
+                $rank = ['up' => 0, 'degraded' => 1, 'down' => 2];
+                if (!isset($grid[$key]) || ($rank[$row->status] ?? 0) > ($rank[$grid[$key]] ?? 0)) $grid[$key] = $row->status;
+            }
+            $hourly = [];
+            for ($day = 0; $day < 7; $day++) for ($hour = 0; $hour < 24; $hour++) $hourly[] = ['day' => $day, 'hour' => $hour, 'status' => $grid["$day-$hour"] ?? 'up'];
+            $lastDown = $rows->filter(fn ($r) => $r->status === 'down')->last();
+            $responseTimes = $up->filter(fn ($r) => $r->response_time_ms !== null)->pluck('response_time_ms');
+            return [
+                'clientId' => $client->id, 'clientName' => $client->name,
+                'uptimePercent' => $rows->isEmpty() ? 100 : round($up->count() / $rows->count() * 100, 2),
+                'avgResponseMs' => $responseTimes->isEmpty() ? 0 : (int) round($responseTimes->avg()),
+                'lastIncident' => $lastDown?->checked_at,
+                'hourly' => $hourly,
+            ];
+        })->values();
+        return response()->json(['clients' => $results]);
+    }
+
+    public function ownerRequests(): JsonResponse
+    {
+        $user = $this->requireOwner();
+        $rows = DB::table('improvement_requests')->join('clients', 'clients.id', '=', 'improvement_requests.client_id')
+            ->where('clients.owner_id', $user->id)->select('improvement_requests.*', 'clients.name as client_name')
+            ->orderByDesc('improvement_requests.created_at')->get();
+        return response()->json(['requests' => $rows->map(fn ($r) => [
+            'id' => $r->id, 'clientId' => $r->client_id, 'clientName' => $r->client_name,
+            'message' => $r->message, 'status' => $r->status, 'createdAt' => $r->created_at,
+        ])]);
+    }
+
+    public function insights(): JsonResponse
+    {
+        $user = $this->requireUser();
+        $ids = DB::table('clients')->where('user_id', $user->id)->pluck('id');
+        $rows = $ids->isEmpty() ? collect() : DB::table('ai_insights')->whereIn('client_id', $ids)->orderByDesc('created_at')->get();
+        return response()->json(['insights' => $rows->map(fn ($r) => $this->insightPayload($r))->values()]);
     }
 
     public function seed(): JsonResponse
@@ -390,19 +600,26 @@ class FreelanceFlowController extends Controller
                 $seeded++;
             } else {
                 $id = $client->id;
-            }
-
-            for ($i = 0; $i < 24; $i++) {
-                DB::table('tracker_events')->insert([
-                    'id' => (string) Str::uuid(),
-                    'client_id' => $id,
-                    'event_type' => 'page_view',
-                    'path' => collect(['/', '/pricing', '/work', '/contact', '/dashboard'])->random(),
-                    'created_at' => now()->subHours(rand(1, 160)),
+                DB::table('clients')->where('id', $id)->update([
+                    'user_id' => $user->id,
+                    'owner_id' => $owner->id,
                     'updated_at' => now(),
                 ]);
             }
-            DB::table('improvement_requests')->insert([
+
+            if (!DB::table('tracker_events')->where('client_id', $id)->exists()) {
+                for ($i = 0; $i < 24; $i++) {
+                    DB::table('tracker_events')->insert([
+                        'id' => (string) Str::uuid(),
+                        'client_id' => $id,
+                        'event_type' => 'page_view',
+                        'path' => collect(['/', '/pricing', '/work', '/contact', '/dashboard'])->random(),
+                        'created_at' => now()->subHours(rand(1, 160)),
+                        'updated_at' => now(),
+                    ]);
+                }
+            }
+            if (!DB::table('improvement_requests')->where('client_id', $id)->exists()) DB::table('improvement_requests')->insert([
                 'id' => (string) Str::uuid(),
                 'client_id' => $id,
                 'message' => 'Can we add a clearer CTA above the fold?',
@@ -410,7 +627,7 @@ class FreelanceFlowController extends Controller
                 'created_at' => now()->subDays(2),
                 'updated_at' => now()->subDays(2),
             ]);
-            DB::table('ai_insights')->insert([
+            if (!DB::table('ai_insights')->where('client_id', $id)->exists()) DB::table('ai_insights')->insert([
                 'id' => (string) Str::uuid(),
                 'client_id' => $id,
                 'kind' => 'summary',
@@ -420,7 +637,7 @@ class FreelanceFlowController extends Controller
                 'created_at' => now()->subDay(),
                 'updated_at' => now()->subDay(),
             ]);
-            DB::table('financial_records')->insert([
+            if (!DB::table('financial_records')->where('client_id', $id)->exists()) DB::table('financial_records')->insert([
                 'id' => (string) Str::uuid(),
                 'client_id' => $id,
                 'type' => 'revenue',
@@ -430,7 +647,7 @@ class FreelanceFlowController extends Controller
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
-            DB::table('invoices')->insert([
+            if (!DB::table('invoices')->where('client_id', $id)->exists()) DB::table('invoices')->insert([
                 'id' => (string) Str::uuid(),
                 'client_id' => $id,
                 'amount' => rand(1200, 5200),
@@ -439,7 +656,7 @@ class FreelanceFlowController extends Controller
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
-            DB::table('security_events')->insert([
+            if (!DB::table('security_events')->where('client_id', $id)->exists()) DB::table('security_events')->insert([
                 'id' => (string) Str::uuid(),
                 'client_id' => $id,
                 'type' => collect(['bug', 'ssl_expiry', 'uptime_change'])->random(),
@@ -450,7 +667,7 @@ class FreelanceFlowController extends Controller
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
-            DB::table('uptime_records')->insert([
+            if (!DB::table('uptime_records')->where('client_id', $id)->exists()) DB::table('uptime_records')->insert([
                 'id' => (string) Str::uuid(),
                 'client_id' => $id,
                 'status' => 'up',
@@ -459,10 +676,13 @@ class FreelanceFlowController extends Controller
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
-            DB::table('budgets')->updateOrInsert(
-                ['client_id' => $id],
-                ['id' => (string) Str::uuid(), 'total_budget' => 8000, 'spent' => rand(2400, 6800), 'start_date' => now()->startOfMonth()->toDateString(), 'updated_at' => now(), 'created_at' => now()]
-            );
+            if (!DB::table('budgets')->where('client_id', $id)->exists()) {
+                DB::table('budgets')->insert([
+                    'id' => (string) Str::uuid(), 'client_id' => $id, 'total_budget' => 8000,
+                    'spent' => rand(2400, 6800), 'start_date' => now()->startOfMonth()->toDateString(),
+                    'updated_at' => now(), 'created_at' => now(),
+                ]);
+            }
         }
 
         return response()->json(['ok' => true, 'seeded' => $seeded]);
@@ -472,6 +692,25 @@ class FreelanceFlowController extends Controller
     {
         abort_unless(Auth::check(), 401, 'Unauthenticated.');
         return Auth::user();
+    }
+
+    private function requireOwner(): User
+    {
+        $user = $this->requireUser();
+        abort_unless($user->role === 'owner', 403, 'Business owner access required.');
+        return $user;
+    }
+
+    private function securityGrade($events): string
+    {
+        $critical = $events->where('severity', 'critical')->count();
+        $high = $events->where('severity', 'high')->count();
+        $medium = $events->where('severity', 'medium')->count();
+        if ($critical > 0) return 'F';
+        if ($high > 2) return 'D';
+        if ($high > 0 || $medium > 5) return 'C';
+        if ($medium > 2) return 'B';
+        return 'A';
     }
 
     private function sessionUser(?User $user): ?array

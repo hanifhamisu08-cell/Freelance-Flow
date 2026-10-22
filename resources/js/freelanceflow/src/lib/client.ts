@@ -111,39 +111,55 @@ export type ClientDetail = {
 };
 
 async function req<T>(url: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(url, {
-    ...init,
-    headers: {
-      "Accept": "application/json",
-      "Content-Type": "application/json",
-      ...(document.querySelector<HTMLMetaElement>('meta[name="csrf-token"]')?.content
-        ? { "X-CSRF-TOKEN": document.querySelector<HTMLMetaElement>('meta[name="csrf-token"]')!.content }
-        : {}),
-      ...(init?.headers || {}),
-    },
-    credentials: "same-origin",
-  });
-  const data = await res.json().catch(() => ({}));
-  if (!res.ok) {
-    const msg = (data as { error?: string }).error || `Request failed (${res.status})`;
-    throw new Error(msg);
+  const method = (init?.method ?? "GET").toUpperCase();
+  const canRetry = method === "GET";
+  for (let attempt = 0; ; attempt++) {
+    let responseReceived = false;
+    try {
+      const res = await fetch(url, {
+        ...init,
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          ...(document.querySelector<HTMLMetaElement>('meta[name="csrf-token"]')?.content
+            ? { "X-CSRF-TOKEN": document.querySelector<HTMLMetaElement>('meta[name="csrf-token"]')!.content }
+            : {}),
+          ...(init?.headers || {}),
+        },
+        credentials: "same-origin",
+      });
+      responseReceived = true;
+      const data = await res.json().catch(() => ({}));
+      if (res.ok) return data as T;
+      if (canRetry && attempt === 0 && res.status >= 500) {
+        await new Promise((resolve) => setTimeout(resolve, 200));
+        continue;
+      }
+      const msg = (data as { error?: string }).error || `Request failed (${res.status})`;
+      throw new Error(msg);
+    } catch (error) {
+      if (canRetry && attempt === 0 && !responseReceived) {
+        await new Promise((resolve) => setTimeout(resolve, 200));
+        continue;
+      }
+      throw error;
+    }
   }
-  return data as T;
 }
 
 export const api = {
   me: () => req<{ user: SessionUser | null }>("/api/auth/me"),
   register: (email: string, password: string, name: string) =>
-    req<{ user: SessionUser }>("/api/auth/register", {
+    req<{ user: SessionUser; csrfToken: string }>("/api/auth/register", {
       method: "POST",
       body: JSON.stringify({ email, password, name }),
     }),
   login: (email: string, password: string) =>
-    req<{ user: SessionUser }>("/api/auth/login", {
+    req<{ user: SessionUser; csrfToken: string }>("/api/auth/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
     }),
-  logout: () => req("/api/auth/logout", { method: "POST" }),
+  logout: () => req<{ ok: boolean; csrfToken: string }>("/api/auth/logout", { method: "POST" }),
 
   listClients: () => req<{ clients: ClientListItem[] }>("/api/clients"),
   createClient: (data: { name: string; contactEmail?: string; projectTitle?: string; projectSummary?: string }) =>
@@ -152,6 +168,7 @@ export const api = {
       body: JSON.stringify(data),
     }),
   getClient: (id: string) => req<{ client: ClientDetail["client"]; privacy: Record<string, boolean>; events: TrackerEvent[]; metrics: Metrics; requests: ImprovementRequest[]; insights: Insight[]; actions: AutopilotAction[]; reports: Report[] }>(`/api/clients/${id}`),
+  listInsights: () => req<{ insights: Insight[] }>("/api/insights"),
   updateClient: (id: string, data: Partial<{ name: string; contactEmail: string; projectTitle: string; projectSummary: string }>) =>
     req<{ client: ClientDetail["client"] }>(`/api/clients/${id}`, { method: "PATCH", body: JSON.stringify(data) }),
   getPrivacy: (id: string) => req<{ fields: { key: string; label: string; visible: boolean }[] }>(`/api/clients/${id}/privacy`),
