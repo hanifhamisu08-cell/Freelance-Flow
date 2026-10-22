@@ -1,0 +1,4925 @@
+{
+  "freelancer": {
+    "clients": [
+      {
+        "id": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+        "name": "Luma Dental",
+        "contactEmail": "ops@lumadental.test",
+        "dashboardSlug": "luma-dental",
+        "projectTitle": "Booking conversion dashboard",
+        "projectSummary": "Tracking patient inquiries and website improvement requests.",
+        "createdAt": "2026-10-22 07:18:56",
+        "eventCount": 24,
+        "requestCount": 1,
+        "insightCount": 1,
+        "actionCount": 2,
+        "lastActivity": "2026-10-22 07:06:42"
+      },
+      {
+        "id": "8dd6a429-71f7-4021-988d-2025ea870e4d",
+        "name": "Crestline Legal",
+        "contactEmail": "hello@crestline.test",
+        "dashboardSlug": "crestline-legal",
+        "projectTitle": "Lead quality portal",
+        "projectSummary": "Live client visibility for traffic, requests, and weekly reporting.",
+        "createdAt": "2026-10-22 07:18:56",
+        "eventCount": 24,
+        "requestCount": 1,
+        "insightCount": 1,
+        "actionCount": 2,
+        "lastActivity": "2026-10-22 07:06:43"
+      },
+      {
+        "id": "6e6af825-10bb-45bc-a5aa-d143be1e0bb8",
+        "name": "Northstar Studio",
+        "contactEmail": "northstar@example.com",
+        "dashboardSlug": "northstar-studio",
+        "projectTitle": "Portfolio relaunch",
+        "projectSummary": "New public site, analytics, and client-ready reporting.",
+        "createdAt": "2026-10-22 07:18:55",
+        "eventCount": 24,
+        "requestCount": 1,
+        "insightCount": 1,
+        "actionCount": 2,
+        "lastActivity": "2026-10-22 07:06:42"
+      }
+    ],
+    "stats": {
+      "autopilotEngaged": true,
+      "hoursSaved": 12,
+      "autoHandled": 0,
+      "awaitingReview": 6,
+      "insightCount": 3,
+      "reportCount": 2,
+      "eventCount": 72,
+      "pendingRequests": 3,
+      "clientCount": 3
+    },
+    "insights": {
+      "insights": [
+        {
+          "id": "e829b0ba-eba5-43c2-af1d-78a1c4f98f79",
+          "clientId": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+          "kind": "summary",
+          "title": "Homepage and contact traffic are leading",
+          "body": "Recent visits cluster around conversion pages. A short update would reassure the client that momentum is visible.",
+          "severity": "info",
+          "createdAt": "2026-10-21 07:18:56"
+        },
+        {
+          "id": "6be4f3d9-ab13-42a6-b244-00053e970700",
+          "clientId": "8dd6a429-71f7-4021-988d-2025ea870e4d",
+          "kind": "summary",
+          "title": "Homepage and contact traffic are leading",
+          "body": "Recent visits cluster around conversion pages. A short update would reassure the client that momentum is visible.",
+          "severity": "info",
+          "createdAt": "2026-10-21 07:18:56"
+        },
+        {
+          "id": "4db232cb-71e6-4d44-a438-902d30e65f09",
+          "clientId": "6e6af825-10bb-45bc-a5aa-d143be1e0bb8",
+          "kind": "summary",
+          "title": "Homepage and contact traffic are leading",
+          "body": "Recent visits cluster around conversion pages. A short update would reassure the client that momentum is visible.",
+          "severity": "info",
+          "createdAt": "2026-10-21 07:18:55"
+        }
+      ]
+    },
+    "autopilot": {
+      "actions": [
+        {
+          "id": "b5155d8d-0d0b-4d2b-830d-1c4910967797",
+          "clientId": "8dd6a429-71f7-4021-988d-2025ea870e4d",
+          "type": "draft_report",
+          "title": "Draft weekly update for Crestline Legal",
+          "detail": "Summarize traffic, pending requests and recommendations for approval.",
+          "status": "pending",
+          "autoMode": false,
+          "createdAt": "2026-10-22 07:46:51",
+          "updatedAt": "2026-10-22 07:46:51",
+          "clientName": "Crestline Legal"
+        },
+        {
+          "id": "2a5c1f89-d82d-4fab-b56e-3198daa3a394",
+          "clientId": "6e6af825-10bb-45bc-a5aa-d143be1e0bb8",
+          "type": "draft_report",
+          "title": "Draft weekly update for Northstar Studio",
+          "detail": "Summarize traffic, pending requests and recommendations for approval.",
+          "status": "pending",
+          "autoMode": false,
+          "createdAt": "2026-10-22 07:46:51",
+          "updatedAt": "2026-10-22 07:46:51",
+          "clientName": "Northstar Studio"
+        },
+        {
+          "id": "e1ba50fa-61e5-4b3c-9b25-1bbd9fbb101b",
+          "clientId": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+          "type": "draft_report",
+          "title": "Draft weekly update for Luma Dental",
+          "detail": "Summarize traffic, pending requests and recommendations for approval.",
+          "status": "pending",
+          "autoMode": false,
+          "createdAt": "2026-10-22 07:46:50",
+          "updatedAt": "2026-10-22 07:46:50",
+          "clientName": "Luma Dental"
+        },
+        {
+          "id": "a924ce46-fc6a-4f2a-bf69-a8d4da436a6b",
+          "clientId": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+          "type": "draft_report",
+          "title": "Draft weekly update for Luma Dental",
+          "detail": "Summarize traffic, pending requests and recommendations for approval.",
+          "status": "pending",
+          "autoMode": false,
+          "createdAt": "2026-10-22 07:46:39",
+          "updatedAt": "2026-10-22 07:46:39",
+          "clientName": "Luma Dental"
+        },
+        {
+          "id": "51550d08-091c-4640-868f-80cb45a81a00",
+          "clientId": "8dd6a429-71f7-4021-988d-2025ea870e4d",
+          "type": "draft_report",
+          "title": "Draft weekly update for Crestline Legal",
+          "detail": "Summarize traffic, pending requests and recommendations for approval.",
+          "status": "pending",
+          "autoMode": false,
+          "createdAt": "2026-10-22 07:46:39",
+          "updatedAt": "2026-10-22 07:46:39",
+          "clientName": "Crestline Legal"
+        },
+        {
+          "id": "2eb43d71-125d-4ada-995f-d8852814194a",
+          "clientId": "6e6af825-10bb-45bc-a5aa-d143be1e0bb8",
+          "type": "draft_report",
+          "title": "Draft weekly update for Northstar Studio",
+          "detail": "Summarize traffic, pending requests and recommendations for approval.",
+          "status": "pending",
+          "autoMode": false,
+          "createdAt": "2026-10-22 07:46:39",
+          "updatedAt": "2026-10-22 07:46:39",
+          "clientName": "Northstar Studio"
+        }
+      ],
+      "clients": [
+        {
+          "id": "8dd6a429-71f7-4021-988d-2025ea870e4d",
+          "name": "Crestline Legal"
+        },
+        {
+          "id": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+          "name": "Luma Dental"
+        },
+        {
+          "id": "6e6af825-10bb-45bc-a5aa-d143be1e0bb8",
+          "name": "Northstar Studio"
+        }
+      ]
+    },
+    "reports": {
+      "reports": [
+        {
+          "id": "4b0ca117-6c22-4c4d-a6ba-a154d6925532",
+          "clientId": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+          "title": "Luma Dental weekly progress report",
+          "period": "Weekly",
+          "bodyMd": "# Luma Dental progress\n\nTracked 24 events with 24 visits this week.\n\nRecommended next step: review pending client requests and send a concise update.",
+          "status": "draft",
+          "createdAt": "2026-10-22 08:04:48",
+          "updatedAt": "2026-10-22 08:04:48",
+          "clientName": "Luma Dental"
+        },
+        {
+          "id": "80b8d001-65ea-40f0-9271-90f5f9289cd8",
+          "clientId": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+          "title": "Luma Dental weekly progress report",
+          "period": "Weekly",
+          "bodyMd": "# Luma Dental progress\n\nTracked 48 events with 48 visits this week.\n\nRecommended next step: review pending client requests and send a concise update.",
+          "status": "draft",
+          "createdAt": "2026-10-22 07:46:59",
+          "updatedAt": "2026-10-22 07:46:59",
+          "clientName": "Luma Dental"
+        }
+      ]
+    },
+    "clientDetails": [
+      {
+        "client": {
+          "id": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+          "name": "Luma Dental",
+          "contactEmail": "ops@lumadental.test",
+          "dashboardSlug": "luma-dental",
+          "projectTitle": "Booking conversion dashboard",
+          "projectSummary": "Tracking patient inquiries and website improvement requests.",
+          "createdAt": "2026-10-22 07:18:56"
+        },
+        "privacy": {
+          "metrics": true,
+          "topPages": true,
+          "requests": true,
+          "insights": true,
+          "reports": true
+        },
+        "events": [
+          {
+            "id": "fc0d10e8-0758-42e6-a1eb-9ee6adb5af2d",
+            "createdAt": "2026-10-22 07:06:42",
+            "path": "/",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "f6e0a22f-a6a5-46ca-9fd4-cef91674555b",
+            "createdAt": "2026-10-22 05:06:42",
+            "path": "/pricing",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "dfb45db3-5649-43f6-9d2c-6299d275a106",
+            "createdAt": "2026-10-22 04:06:42",
+            "path": "/work",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "faee7bd0-d1b5-4519-9e35-dcf055dd3dca",
+            "createdAt": "2026-10-22 03:51:42",
+            "path": "/contact",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "7264d934-2895-4fb4-99d4-906d7fb159e4",
+            "createdAt": "2026-10-22 02:06:42",
+            "path": "/dashboard",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "a9dc55ad-69c3-4eef-8ed0-26b02520e7ed",
+            "createdAt": "2026-10-22 01:06:42",
+            "path": "/",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "f0aa386b-e08d-4ed9-8a01-9c755be33a23",
+            "createdAt": "2026-10-22 00:51:42",
+            "path": "/pricing",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "686b38cf-6552-475f-9235-85ce5cf3f2f9",
+            "createdAt": "2026-10-22 00:36:42",
+            "path": "/work",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "0f1066a9-c525-4273-ae62-99bee5aab9a9",
+            "createdAt": "2026-10-21 23:06:42",
+            "path": "/contact",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "278f6004-493f-47f8-b897-3873857191e3",
+            "createdAt": "2026-10-21 22:51:42",
+            "path": "/dashboard",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "ca515774-8641-4329-b0b0-e0878bc87f41",
+            "createdAt": "2026-10-21 22:06:42",
+            "path": "/",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "219b4942-54d7-46d7-ad1a-001ecc07e80c",
+            "createdAt": "2026-10-21 20:06:42",
+            "path": "/pricing",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "a563c555-eb6b-4aaa-8f8f-fafa125b7fe5",
+            "createdAt": "2026-10-21 19:06:42",
+            "path": "/work",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "ef6a73ec-a76d-4553-a5db-00111acf56ad",
+            "createdAt": "2026-10-21 18:51:42",
+            "path": "/contact",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "a38e5d3f-6b27-411e-88ce-38b9f8049d59",
+            "createdAt": "2026-10-21 17:06:42",
+            "path": "/dashboard",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "b1c577df-eb10-46fd-909d-13e86fa01adb",
+            "createdAt": "2026-10-21 16:06:42",
+            "path": "/",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "85374139-a2cc-40da-ae3b-405880956010",
+            "createdAt": "2026-10-21 15:51:42",
+            "path": "/pricing",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "aa76f968-43b4-4c37-871e-02cb2dc4e7b6",
+            "createdAt": "2026-10-21 15:36:42",
+            "path": "/work",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "2d5bfe85-994c-45e2-a65c-16e6659a0375",
+            "createdAt": "2026-10-21 14:06:42",
+            "path": "/contact",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "cc28a6d1-0536-46d1-906c-f1b07d7e8b3b",
+            "createdAt": "2026-10-21 13:06:42",
+            "path": "/dashboard",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "86f4fb6f-8c96-4210-8655-21bf06bee6e8",
+            "createdAt": "2026-10-21 12:51:42",
+            "path": "/",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "43060e0e-a07b-47f4-a11a-50b24f4d45e2",
+            "createdAt": "2026-10-21 12:06:42",
+            "path": "/pricing",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "01a4bbb3-65be-4fae-9cf2-a4e7724ae0ed",
+            "createdAt": "2026-10-21 11:06:42",
+            "path": "/work",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "4fcf939b-5216-4cea-a1d3-a5a876e6988a",
+            "createdAt": "2026-10-21 09:06:42",
+            "path": "/contact",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          }
+        ],
+        "metrics": {
+          "total": 24,
+          "last24h": 24,
+          "last7d": 24,
+          "hourly": [
+            {
+              "ts": "2026-10-21T10:36:53+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T11:36:53+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-21T12:36:53+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T13:36:53+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T14:36:53+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-21T15:36:53+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T16:36:53+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T17:36:53+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-21T18:36:53+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T19:36:53+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-21T20:36:53+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-21T21:36:53+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T22:36:53+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-21T23:36:53+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T00:36:53+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-22T01:36:53+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T02:36:53+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-22T03:36:53+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T04:36:53+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-22T05:36:53+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-22T06:36:53+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T07:36:53+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-22T08:36:53+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T09:36:53+01:00",
+              "count": 0
+            }
+          ],
+          "topPages": [
+            {
+              "path": "/work",
+              "count": 5
+            },
+            {
+              "path": "/pricing",
+              "count": 5
+            },
+            {
+              "path": "/contact",
+              "count": 5
+            },
+            {
+              "path": "/",
+              "count": 5
+            },
+            {
+              "path": "/dashboard",
+              "count": 4
+            }
+          ],
+          "lastEvent": "2026-10-22 07:06:42"
+        },
+        "requests": [
+          {
+            "id": "e4dc9427-722f-49c3-9de3-f2ebe8688747",
+            "clientId": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+            "message": "Can we add a clearer CTA above the fold?",
+            "status": "open",
+            "createdAt": "2026-10-20 07:18:56"
+          }
+        ],
+        "insights": [
+          {
+            "id": "e829b0ba-eba5-43c2-af1d-78a1c4f98f79",
+            "clientId": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+            "kind": "summary",
+            "title": "Homepage and contact traffic are leading",
+            "body": "Recent visits cluster around conversion pages. A short update would reassure the client that momentum is visible.",
+            "severity": "info",
+            "createdAt": "2026-10-21 07:18:56"
+          }
+        ],
+        "actions": [
+          {
+            "id": "e1ba50fa-61e5-4b3c-9b25-1bbd9fbb101b",
+            "clientId": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+            "type": "draft_report",
+            "title": "Draft weekly update for Luma Dental",
+            "detail": "Summarize traffic, pending requests and recommendations for approval.",
+            "status": "pending",
+            "autoMode": false,
+            "createdAt": "2026-10-22 07:46:50",
+            "updatedAt": "2026-10-22 07:46:50",
+            "clientName": null
+          },
+          {
+            "id": "a924ce46-fc6a-4f2a-bf69-a8d4da436a6b",
+            "clientId": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+            "type": "draft_report",
+            "title": "Draft weekly update for Luma Dental",
+            "detail": "Summarize traffic, pending requests and recommendations for approval.",
+            "status": "pending",
+            "autoMode": false,
+            "createdAt": "2026-10-22 07:46:39",
+            "updatedAt": "2026-10-22 07:46:39",
+            "clientName": null
+          }
+        ],
+        "reports": [
+          {
+            "id": "4b0ca117-6c22-4c4d-a6ba-a154d6925532",
+            "clientId": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+            "title": "Luma Dental weekly progress report",
+            "period": "Weekly",
+            "bodyMd": "# Luma Dental progress\n\nTracked 24 events with 24 visits this week.\n\nRecommended next step: review pending client requests and send a concise update.",
+            "status": "draft",
+            "createdAt": "2026-10-22 08:04:48",
+            "updatedAt": "2026-10-22 08:04:48",
+            "clientName": null
+          },
+          {
+            "id": "80b8d001-65ea-40f0-9271-90f5f9289cd8",
+            "clientId": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+            "title": "Luma Dental weekly progress report",
+            "period": "Weekly",
+            "bodyMd": "# Luma Dental progress\n\nTracked 48 events with 48 visits this week.\n\nRecommended next step: review pending client requests and send a concise update.",
+            "status": "draft",
+            "createdAt": "2026-10-22 07:46:59",
+            "updatedAt": "2026-10-22 07:46:59",
+            "clientName": null
+          }
+        ]
+      },
+      {
+        "client": {
+          "id": "8dd6a429-71f7-4021-988d-2025ea870e4d",
+          "name": "Crestline Legal",
+          "contactEmail": "hello@crestline.test",
+          "dashboardSlug": "crestline-legal",
+          "projectTitle": "Lead quality portal",
+          "projectSummary": "Live client visibility for traffic, requests, and weekly reporting.",
+          "createdAt": "2026-10-22 07:18:56"
+        },
+        "privacy": {
+          "metrics": true,
+          "topPages": true,
+          "requests": true,
+          "insights": true,
+          "reports": true
+        },
+        "events": [
+          {
+            "id": "65aa59ec-3c36-4e2f-83be-40421201386b",
+            "createdAt": "2026-10-22 07:06:43",
+            "path": "/",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "60cbf855-c46c-49aa-9d54-55f128fe3c83",
+            "createdAt": "2026-10-22 05:06:43",
+            "path": "/pricing",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "bbc51d9a-aab4-4e13-9f74-197f60dbdff7",
+            "createdAt": "2026-10-22 04:06:43",
+            "path": "/work",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "5e7443cd-24d2-48bc-b0b3-38b8e59950f7",
+            "createdAt": "2026-10-22 03:51:43",
+            "path": "/contact",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "23355ab3-2a81-442d-a51f-8b15d8650b85",
+            "createdAt": "2026-10-22 02:06:43",
+            "path": "/dashboard",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "c33127f3-7145-44ac-8a5a-3a5ef0d69424",
+            "createdAt": "2026-10-22 01:06:43",
+            "path": "/",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "7ae7cbcb-0ca7-4d37-9c85-21b70f762893",
+            "createdAt": "2026-10-22 00:51:43",
+            "path": "/pricing",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "228abd14-b794-4bf9-8713-1271041acb0e",
+            "createdAt": "2026-10-22 00:36:43",
+            "path": "/work",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "3b1ec6c3-f304-47e3-b92d-6cfa25d3edd9",
+            "createdAt": "2026-10-21 23:06:43",
+            "path": "/contact",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "8470924f-9b81-44a9-aaa7-72f25cb742d3",
+            "createdAt": "2026-10-21 22:51:43",
+            "path": "/dashboard",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "2fde83b2-34c0-4479-9abf-7ab61b6775f5",
+            "createdAt": "2026-10-21 22:06:43",
+            "path": "/",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "29a6955b-e7c9-46a8-b2bf-ea5a0dd53ab8",
+            "createdAt": "2026-10-21 20:06:43",
+            "path": "/pricing",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "25ae5d11-7e52-4622-9ec0-83769b1883e0",
+            "createdAt": "2026-10-21 19:06:42",
+            "path": "/work",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "9cd9745e-865b-4e7e-8815-26c566bc37d8",
+            "createdAt": "2026-10-21 18:51:43",
+            "path": "/contact",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "505795c9-bc87-4b59-8e9b-4962f28df75b",
+            "createdAt": "2026-10-21 17:06:42",
+            "path": "/dashboard",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "4069ee8c-bb8d-4e2a-90f2-81cfa6056e63",
+            "createdAt": "2026-10-21 16:06:42",
+            "path": "/",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "f5ee217f-0c4a-4714-b141-7b31dd53371c",
+            "createdAt": "2026-10-21 15:51:42",
+            "path": "/pricing",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "7dec96ef-c0e5-4cb4-ae2a-e92f3b29a6a2",
+            "createdAt": "2026-10-21 15:36:42",
+            "path": "/work",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "d19ea4ec-2e9d-46a0-96ac-5adf0b8230b7",
+            "createdAt": "2026-10-21 14:06:42",
+            "path": "/contact",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "5249f2df-b61c-4123-a806-3e574b872303",
+            "createdAt": "2026-10-21 13:06:42",
+            "path": "/dashboard",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "d5bf0fe4-e293-46d4-8a2a-470f720be608",
+            "createdAt": "2026-10-21 12:51:42",
+            "path": "/",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "b9fb11d6-af40-46c5-9062-363a33f002d5",
+            "createdAt": "2026-10-21 12:06:42",
+            "path": "/pricing",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "2146f943-5284-4e61-92af-b7567d247e82",
+            "createdAt": "2026-10-21 11:06:42",
+            "path": "/work",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "fe33e000-7423-48ad-b578-d5e3083e9a5e",
+            "createdAt": "2026-10-21 09:06:42",
+            "path": "/contact",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          }
+        ],
+        "metrics": {
+          "total": 24,
+          "last24h": 24,
+          "last7d": 24,
+          "hourly": [
+            {
+              "ts": "2026-10-21T10:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T11:36:54+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-21T12:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T13:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T14:36:54+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-21T15:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T16:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T17:36:54+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-21T18:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T19:36:54+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-21T20:36:54+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-21T21:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T22:36:54+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-21T23:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T00:36:54+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-22T01:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T02:36:54+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-22T03:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T04:36:54+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-22T05:36:54+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-22T06:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T07:36:54+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-22T08:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T09:36:54+01:00",
+              "count": 0
+            }
+          ],
+          "topPages": [
+            {
+              "path": "/work",
+              "count": 5
+            },
+            {
+              "path": "/pricing",
+              "count": 5
+            },
+            {
+              "path": "/contact",
+              "count": 5
+            },
+            {
+              "path": "/",
+              "count": 5
+            },
+            {
+              "path": "/dashboard",
+              "count": 4
+            }
+          ],
+          "lastEvent": "2026-10-22 07:06:43"
+        },
+        "requests": [
+          {
+            "id": "5f0de49b-ab3c-4745-a96e-269e0b6bac5e",
+            "clientId": "8dd6a429-71f7-4021-988d-2025ea870e4d",
+            "message": "Can we add a clearer CTA above the fold?",
+            "status": "open",
+            "createdAt": "2026-10-20 07:18:56"
+          }
+        ],
+        "insights": [
+          {
+            "id": "6be4f3d9-ab13-42a6-b244-00053e970700",
+            "clientId": "8dd6a429-71f7-4021-988d-2025ea870e4d",
+            "kind": "summary",
+            "title": "Homepage and contact traffic are leading",
+            "body": "Recent visits cluster around conversion pages. A short update would reassure the client that momentum is visible.",
+            "severity": "info",
+            "createdAt": "2026-10-21 07:18:56"
+          }
+        ],
+        "actions": [
+          {
+            "id": "b5155d8d-0d0b-4d2b-830d-1c4910967797",
+            "clientId": "8dd6a429-71f7-4021-988d-2025ea870e4d",
+            "type": "draft_report",
+            "title": "Draft weekly update for Crestline Legal",
+            "detail": "Summarize traffic, pending requests and recommendations for approval.",
+            "status": "pending",
+            "autoMode": false,
+            "createdAt": "2026-10-22 07:46:51",
+            "updatedAt": "2026-10-22 07:46:51",
+            "clientName": null
+          },
+          {
+            "id": "51550d08-091c-4640-868f-80cb45a81a00",
+            "clientId": "8dd6a429-71f7-4021-988d-2025ea870e4d",
+            "type": "draft_report",
+            "title": "Draft weekly update for Crestline Legal",
+            "detail": "Summarize traffic, pending requests and recommendations for approval.",
+            "status": "pending",
+            "autoMode": false,
+            "createdAt": "2026-10-22 07:46:39",
+            "updatedAt": "2026-10-22 07:46:39",
+            "clientName": null
+          }
+        ],
+        "reports": []
+      },
+      {
+        "client": {
+          "id": "6e6af825-10bb-45bc-a5aa-d143be1e0bb8",
+          "name": "Northstar Studio",
+          "contactEmail": "northstar@example.com",
+          "dashboardSlug": "northstar-studio",
+          "projectTitle": "Portfolio relaunch",
+          "projectSummary": "New public site, analytics, and client-ready reporting.",
+          "createdAt": "2026-10-22 07:18:55"
+        },
+        "privacy": {
+          "metrics": true,
+          "topPages": true,
+          "requests": true,
+          "insights": true,
+          "reports": true
+        },
+        "events": [
+          {
+            "id": "8e9f5518-cc6f-43a6-a7f7-cca8d57279bb",
+            "createdAt": "2026-10-22 07:06:42",
+            "path": "/",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "ecb55a52-d65f-4c89-a520-b9608af08616",
+            "createdAt": "2026-10-22 05:06:42",
+            "path": "/pricing",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "294e41ac-10e4-49a4-b542-929771a3ed9f",
+            "createdAt": "2026-10-22 04:06:42",
+            "path": "/work",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "2e727e01-086f-4fde-a596-020ce1e5281d",
+            "createdAt": "2026-10-22 03:51:42",
+            "path": "/contact",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "10f2ecd4-d8a5-451d-920c-1a4e00f71541",
+            "createdAt": "2026-10-22 02:06:42",
+            "path": "/dashboard",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "b1a6b90a-8764-465f-b99a-442332dcbdef",
+            "createdAt": "2026-10-22 01:06:42",
+            "path": "/",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "d1df9467-151b-48e7-b346-106215ea033e",
+            "createdAt": "2026-10-22 00:51:42",
+            "path": "/pricing",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "3cfdd61e-f3c5-4975-96d7-cbac22422a30",
+            "createdAt": "2026-10-22 00:36:42",
+            "path": "/work",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "da0dabf8-0565-4c13-9eff-5dc493585f03",
+            "createdAt": "2026-10-21 23:06:42",
+            "path": "/contact",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "f837dc01-d24f-4a92-8b06-66c65a19830a",
+            "createdAt": "2026-10-21 22:51:42",
+            "path": "/dashboard",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "7bb3f394-2c58-4d39-9009-71f1e07e963d",
+            "createdAt": "2026-10-21 22:06:42",
+            "path": "/",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "25ea8c26-8ebf-48f7-9656-33a856090b6b",
+            "createdAt": "2026-10-21 20:06:42",
+            "path": "/pricing",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "0bc3546f-aa02-4f1e-b3ff-5bc304b3f6ac",
+            "createdAt": "2026-10-21 19:06:42",
+            "path": "/work",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "5175863f-61e6-4262-aa18-b0a3d9e49e4b",
+            "createdAt": "2026-10-21 18:51:42",
+            "path": "/contact",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "b9805433-6569-479d-beaf-4126e2877a48",
+            "createdAt": "2026-10-21 17:06:42",
+            "path": "/dashboard",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "5da95946-20e2-43dd-a551-e695ec355e3b",
+            "createdAt": "2026-10-21 16:06:42",
+            "path": "/",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "f650a34a-03f0-4e93-bed3-95f771da159f",
+            "createdAt": "2026-10-21 15:51:42",
+            "path": "/pricing",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "5f90f00e-dfa9-42cc-9a47-b6ae49d8924c",
+            "createdAt": "2026-10-21 15:36:42",
+            "path": "/work",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "93ce5ece-0121-4c9c-8f3a-c42be6abe86f",
+            "createdAt": "2026-10-21 14:06:42",
+            "path": "/contact",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "eb86f125-7b95-49d4-85b4-316e5a4a0841",
+            "createdAt": "2026-10-21 13:06:42",
+            "path": "/dashboard",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "f8587f8f-8526-4d9b-8a3f-406e10a4aede",
+            "createdAt": "2026-10-21 12:51:42",
+            "path": "/",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "23ef31f0-5906-468c-a0e6-5b998bacf33e",
+            "createdAt": "2026-10-21 12:06:42",
+            "path": "/pricing",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "524d3570-df74-441f-b55b-876a65d83358",
+            "createdAt": "2026-10-21 11:06:42",
+            "path": "/work",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          },
+          {
+            "id": "95df1dec-f59c-46b3-8b14-205fcc462176",
+            "createdAt": "2026-10-21 09:06:42",
+            "path": "/contact",
+            "eventType": "page_view",
+            "referrer": null,
+            "userAgent": null,
+            "ipAddress": null
+          }
+        ],
+        "metrics": {
+          "total": 24,
+          "last24h": 24,
+          "last7d": 24,
+          "hourly": [
+            {
+              "ts": "2026-10-21T10:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T11:36:55+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-21T12:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T13:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T14:36:55+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-21T15:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T16:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T17:36:55+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-21T18:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T19:36:55+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-21T20:36:55+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-21T21:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T22:36:55+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-21T23:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T00:36:55+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-22T01:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T02:36:55+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-22T03:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T04:36:55+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-22T05:36:55+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-22T06:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T07:36:55+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-22T08:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T09:36:55+01:00",
+              "count": 0
+            }
+          ],
+          "topPages": [
+            {
+              "path": "/work",
+              "count": 5
+            },
+            {
+              "path": "/pricing",
+              "count": 5
+            },
+            {
+              "path": "/contact",
+              "count": 5
+            },
+            {
+              "path": "/",
+              "count": 5
+            },
+            {
+              "path": "/dashboard",
+              "count": 4
+            }
+          ],
+          "lastEvent": "2026-10-22 07:06:42"
+        },
+        "requests": [
+          {
+            "id": "5da3b3d9-32aa-4d47-8b61-b3c744302427",
+            "clientId": "6e6af825-10bb-45bc-a5aa-d143be1e0bb8",
+            "message": "Can we add a clearer CTA above the fold?",
+            "status": "open",
+            "createdAt": "2026-10-20 07:18:55"
+          }
+        ],
+        "insights": [
+          {
+            "id": "4db232cb-71e6-4d44-a438-902d30e65f09",
+            "clientId": "6e6af825-10bb-45bc-a5aa-d143be1e0bb8",
+            "kind": "summary",
+            "title": "Homepage and contact traffic are leading",
+            "body": "Recent visits cluster around conversion pages. A short update would reassure the client that momentum is visible.",
+            "severity": "info",
+            "createdAt": "2026-10-21 07:18:55"
+          }
+        ],
+        "actions": [
+          {
+            "id": "2a5c1f89-d82d-4fab-b56e-3198daa3a394",
+            "clientId": "6e6af825-10bb-45bc-a5aa-d143be1e0bb8",
+            "type": "draft_report",
+            "title": "Draft weekly update for Northstar Studio",
+            "detail": "Summarize traffic, pending requests and recommendations for approval.",
+            "status": "pending",
+            "autoMode": false,
+            "createdAt": "2026-10-22 07:46:51",
+            "updatedAt": "2026-10-22 07:46:51",
+            "clientName": null
+          },
+          {
+            "id": "2eb43d71-125d-4ada-995f-d8852814194a",
+            "clientId": "6e6af825-10bb-45bc-a5aa-d143be1e0bb8",
+            "type": "draft_report",
+            "title": "Draft weekly update for Northstar Studio",
+            "detail": "Summarize traffic, pending requests and recommendations for approval.",
+            "status": "pending",
+            "autoMode": false,
+            "createdAt": "2026-10-22 07:46:39",
+            "updatedAt": "2026-10-22 07:46:39",
+            "clientName": null
+          }
+        ],
+        "reports": []
+      }
+    ],
+    "publicClients": [
+      {
+        "client": {
+          "name": "Luma Dental",
+          "projectTitle": "Booking conversion dashboard",
+          "projectSummary": "Tracking patient inquiries and website improvement requests."
+        },
+        "privacy": {
+          "metrics": true,
+          "topPages": true,
+          "requests": true,
+          "insights": true,
+          "reports": true
+        },
+        "metrics": {
+          "total": 24,
+          "last24h": 24,
+          "last7d": 24,
+          "hourly": [
+            {
+              "ts": "2026-10-21T10:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T11:36:54+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-21T12:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T13:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T14:36:54+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-21T15:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T16:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T17:36:54+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-21T18:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T19:36:54+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-21T20:36:54+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-21T21:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T22:36:54+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-21T23:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T00:36:54+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-22T01:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T02:36:54+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-22T03:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T04:36:54+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-22T05:36:54+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-22T06:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T07:36:54+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-22T08:36:54+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T09:36:54+01:00",
+              "count": 0
+            }
+          ],
+          "topPages": [
+            {
+              "path": "/work",
+              "count": 5
+            },
+            {
+              "path": "/pricing",
+              "count": 5
+            },
+            {
+              "path": "/contact",
+              "count": 5
+            },
+            {
+              "path": "/",
+              "count": 5
+            },
+            {
+              "path": "/dashboard",
+              "count": 4
+            }
+          ],
+          "lastEvent": "2026-10-22 07:06:42"
+        },
+        "topPages": [
+          {
+            "path": "/work",
+            "count": 5
+          },
+          {
+            "path": "/pricing",
+            "count": 5
+          },
+          {
+            "path": "/contact",
+            "count": 5
+          },
+          {
+            "path": "/",
+            "count": 5
+          },
+          {
+            "path": "/dashboard",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "client": {
+          "name": "Crestline Legal",
+          "projectTitle": "Lead quality portal",
+          "projectSummary": "Live client visibility for traffic, requests, and weekly reporting."
+        },
+        "privacy": {
+          "metrics": true,
+          "topPages": true,
+          "requests": true,
+          "insights": true,
+          "reports": true
+        },
+        "metrics": {
+          "total": 24,
+          "last24h": 24,
+          "last7d": 24,
+          "hourly": [
+            {
+              "ts": "2026-10-21T10:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T11:36:55+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-21T12:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T13:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T14:36:55+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-21T15:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T16:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T17:36:55+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-21T18:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T19:36:55+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-21T20:36:55+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-21T21:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T22:36:55+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-21T23:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T00:36:55+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-22T01:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T02:36:55+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-22T03:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T04:36:55+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-22T05:36:55+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-22T06:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T07:36:55+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-22T08:36:55+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T09:36:55+01:00",
+              "count": 0
+            }
+          ],
+          "topPages": [
+            {
+              "path": "/work",
+              "count": 5
+            },
+            {
+              "path": "/pricing",
+              "count": 5
+            },
+            {
+              "path": "/contact",
+              "count": 5
+            },
+            {
+              "path": "/",
+              "count": 5
+            },
+            {
+              "path": "/dashboard",
+              "count": 4
+            }
+          ],
+          "lastEvent": "2026-10-22 07:06:43"
+        },
+        "topPages": [
+          {
+            "path": "/work",
+            "count": 5
+          },
+          {
+            "path": "/pricing",
+            "count": 5
+          },
+          {
+            "path": "/contact",
+            "count": 5
+          },
+          {
+            "path": "/",
+            "count": 5
+          },
+          {
+            "path": "/dashboard",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "client": {
+          "name": "Northstar Studio",
+          "projectTitle": "Portfolio relaunch",
+          "projectSummary": "New public site, analytics, and client-ready reporting."
+        },
+        "privacy": {
+          "metrics": true,
+          "topPages": true,
+          "requests": true,
+          "insights": true,
+          "reports": true
+        },
+        "metrics": {
+          "total": 24,
+          "last24h": 24,
+          "last7d": 24,
+          "hourly": [
+            {
+              "ts": "2026-10-21T10:36:56+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T11:36:56+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-21T12:36:56+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T13:36:56+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T14:36:56+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-21T15:36:56+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T16:36:56+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T17:36:56+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-21T18:36:56+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T19:36:56+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-21T20:36:56+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-21T21:36:56+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-21T22:36:56+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-21T23:36:56+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T00:36:56+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-22T01:36:56+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T02:36:56+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-22T03:36:56+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T04:36:56+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-22T05:36:56+01:00",
+              "count": 2
+            },
+            {
+              "ts": "2026-10-22T06:36:56+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T07:36:56+01:00",
+              "count": 0
+            },
+            {
+              "ts": "2026-10-22T08:36:56+01:00",
+              "count": 1
+            },
+            {
+              "ts": "2026-10-22T09:36:56+01:00",
+              "count": 0
+            }
+          ],
+          "topPages": [
+            {
+              "path": "/work",
+              "count": 5
+            },
+            {
+              "path": "/pricing",
+              "count": 5
+            },
+            {
+              "path": "/contact",
+              "count": 5
+            },
+            {
+              "path": "/",
+              "count": 5
+            },
+            {
+              "path": "/dashboard",
+              "count": 4
+            }
+          ],
+          "lastEvent": "2026-10-22 07:06:42"
+        },
+        "topPages": [
+          {
+            "path": "/work",
+            "count": 5
+          },
+          {
+            "path": "/pricing",
+            "count": 5
+          },
+          {
+            "path": "/contact",
+            "count": 5
+          },
+          {
+            "path": "/",
+            "count": 5
+          },
+          {
+            "path": "/dashboard",
+            "count": 4
+          }
+        ]
+      }
+    ]
+  },
+  "owner": {
+    "stats": {
+      "totalRevenue": 7245,
+      "totalExpenses": 0,
+      "netProfit": 7245,
+      "activeBugs": 0,
+      "uptimePercent": 100,
+      "securityScore": {
+        "grade": "C",
+        "score": 65,
+        "color": "#eab308"
+      },
+      "totalInvoices": 3,
+      "paidInvoices": 1,
+      "outstandingInvoices": 2,
+      "recentAlerts": [
+        {
+          "id": "700751e4-92d7-450e-9c7a-ec553ba770c2",
+          "title": "Routine monitor item",
+          "severity": "high",
+          "status": "open",
+          "type": "uptime_change",
+          "clientName": "Luma Dental",
+          "detectedAt": "2026-10-22 07:18:56"
+        },
+        {
+          "id": "03c3f2e0-e1bd-434e-b34a-8dae2cbd73fe",
+          "title": "Routine monitor item",
+          "severity": "high",
+          "status": "open",
+          "type": "uptime_change",
+          "clientName": "Crestline Legal",
+          "detectedAt": "2026-10-22 07:18:56"
+        },
+        {
+          "id": "f404df07-f25a-41ee-954c-f050d2d96379",
+          "title": "Routine monitor item",
+          "severity": "low",
+          "status": "open",
+          "type": "uptime_change",
+          "clientName": "Northstar Studio",
+          "detectedAt": "2026-10-22 07:18:55"
+        }
+      ],
+      "outstandingInvoicesList": [
+        {
+          "id": "29342840-7729-4b35-9273-5bd72b31447f",
+          "clientName": "Northstar Studio",
+          "amount": 1757,
+          "status": "overdue",
+          "dueDate": "2026-11-03"
+        },
+        {
+          "id": "c3297541-fb1e-4a21-99ac-45262e690696",
+          "clientName": "Crestline Legal",
+          "amount": 2419,
+          "status": "overdue",
+          "dueDate": "2026-11-03"
+        }
+      ],
+      "monthlyRevenue": [
+        {
+          "month": "Jul",
+          "revenue": 0
+        },
+        {
+          "month": "Aug",
+          "revenue": 0
+        },
+        {
+          "month": "Sep",
+          "revenue": 0
+        },
+        {
+          "month": "Oct",
+          "revenue": 7245
+        }
+      ],
+      "clientStats": [
+        {
+          "clientId": "6e6af825-10bb-45bc-a5aa-d143be1e0bb8",
+          "clientName": "Northstar Studio",
+          "revenue": 2248,
+          "expenses": 0,
+          "netProfit": 2248,
+          "activeBugs": 0,
+          "uptimePercent": 100,
+          "securityScore": "A",
+          "totalInvoices": 1,
+          "paidInvoices": 0,
+          "outstandingInvoices": 1,
+          "budgetTotal": 8000,
+          "budgetSpent": 3833
+        },
+        {
+          "clientId": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+          "clientName": "Luma Dental",
+          "revenue": 3176,
+          "expenses": 0,
+          "netProfit": 3176,
+          "activeBugs": 0,
+          "uptimePercent": 100,
+          "securityScore": "C",
+          "totalInvoices": 1,
+          "paidInvoices": 1,
+          "outstandingInvoices": 0,
+          "budgetTotal": 8000,
+          "budgetSpent": 3468
+        },
+        {
+          "clientId": "8dd6a429-71f7-4021-988d-2025ea870e4d",
+          "clientName": "Crestline Legal",
+          "revenue": 1821,
+          "expenses": 0,
+          "netProfit": 1821,
+          "activeBugs": 0,
+          "uptimePercent": 100,
+          "securityScore": "C",
+          "totalInvoices": 1,
+          "paidInvoices": 0,
+          "outstandingInvoices": 1,
+          "budgetTotal": 8000,
+          "budgetSpent": 3229
+        }
+      ]
+    },
+    "finance": {
+      "records": [
+        {
+          "id": "ee6d3e29-5cf1-40f6-a721-9e493efb6f6d",
+          "clientId": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+          "clientName": "Luma Dental",
+          "type": "revenue",
+          "category": "Retainer",
+          "amount": 3176,
+          "currency": "USD",
+          "description": "",
+          "recordDate": "2026-10-22",
+          "recurring": false,
+          "recurringPeriod": null,
+          "invoiceNumber": null,
+          "createdAt": "2026-10-22 07:18:56"
+        },
+        {
+          "id": "805ba04d-66c4-4787-9798-cb0e8246a430",
+          "clientId": "6e6af825-10bb-45bc-a5aa-d143be1e0bb8",
+          "clientName": "Northstar Studio",
+          "type": "revenue",
+          "category": "Retainer",
+          "amount": 2248,
+          "currency": "USD",
+          "description": "",
+          "recordDate": "2026-10-22",
+          "recurring": false,
+          "recurringPeriod": null,
+          "invoiceNumber": null,
+          "createdAt": "2026-10-22 07:18:55"
+        },
+        {
+          "id": "7742dc94-759f-4df1-ac7c-dd4980b2d366",
+          "clientId": "8dd6a429-71f7-4021-988d-2025ea870e4d",
+          "clientName": "Crestline Legal",
+          "type": "revenue",
+          "category": "Retainer",
+          "amount": 1821,
+          "currency": "USD",
+          "description": "",
+          "recordDate": "2026-10-22",
+          "recurring": false,
+          "recurringPeriod": null,
+          "invoiceNumber": null,
+          "createdAt": "2026-10-22 07:18:56"
+        }
+      ],
+      "monthly": [
+        {
+          "month": "May 26",
+          "revenue": 0,
+          "expenses": 0,
+          "net": 0
+        },
+        {
+          "month": "Jun 26",
+          "revenue": 0,
+          "expenses": 0,
+          "net": 0
+        },
+        {
+          "month": "Jul 26",
+          "revenue": 0,
+          "expenses": 0,
+          "net": 0
+        },
+        {
+          "month": "Aug 26",
+          "revenue": 0,
+          "expenses": 0,
+          "net": 0
+        },
+        {
+          "month": "Sep 26",
+          "revenue": 0,
+          "expenses": 0,
+          "net": 0
+        },
+        {
+          "month": "Oct 26",
+          "revenue": 7245,
+          "expenses": 0,
+          "net": 7245
+        }
+      ],
+      "totalRevenue": 7245,
+      "totalExpenses": 0
+    },
+    "invoices": {
+      "invoices": [
+        {
+          "id": "c3297541-fb1e-4a21-99ac-45262e690696",
+          "clientId": "8dd6a429-71f7-4021-988d-2025ea870e4d",
+          "clientName": "Crestline Legal",
+          "amount": 2419,
+          "currency": "USD",
+          "status": "overdue",
+          "dueDate": "2026-11-03",
+          "paidDate": null,
+          "itemsJson": null,
+          "notes": null,
+          "createdAt": "2026-10-22 07:18:56",
+          "updatedAt": "2026-10-22 07:18:56"
+        },
+        {
+          "id": "29342840-7729-4b35-9273-5bd72b31447f",
+          "clientId": "6e6af825-10bb-45bc-a5aa-d143be1e0bb8",
+          "clientName": "Northstar Studio",
+          "amount": 1757,
+          "currency": "USD",
+          "status": "overdue",
+          "dueDate": "2026-11-03",
+          "paidDate": null,
+          "itemsJson": null,
+          "notes": null,
+          "createdAt": "2026-10-22 07:18:55",
+          "updatedAt": "2026-10-22 07:18:55"
+        },
+        {
+          "id": "776c61dd-3adf-4fa9-a516-3d09af92f42e",
+          "clientId": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+          "clientName": "Luma Dental",
+          "amount": 4489,
+          "currency": "USD",
+          "status": "paid",
+          "dueDate": "2026-11-11",
+          "paidDate": null,
+          "itemsJson": null,
+          "notes": null,
+          "createdAt": "2026-10-22 07:18:56",
+          "updatedAt": "2026-10-22 07:18:56"
+        }
+      ],
+      "totalInvoiced": 8665,
+      "paid": 4489,
+      "outstanding": 4176
+    },
+    "budget": {
+      "budgets": [
+        {
+          "id": "418aa824-02d9-4efc-baa4-c0ddafb86efa",
+          "clientId": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+          "clientName": "Luma Dental",
+          "totalBudget": 8000,
+          "spent": 3468,
+          "remaining": 4532,
+          "percentage": 43.35,
+          "currency": "USD",
+          "period": "monthly",
+          "startDate": "2026-10-01",
+          "endDate": null,
+          "createdAt": "2026-10-22 07:22:44"
+        },
+        {
+          "id": "ee60bcfa-3163-4be9-9546-c8d2e760dd2a",
+          "clientId": "8dd6a429-71f7-4021-988d-2025ea870e4d",
+          "clientName": "Crestline Legal",
+          "totalBudget": 8000,
+          "spent": 3229,
+          "remaining": 4771,
+          "percentage": 40.36,
+          "currency": "USD",
+          "period": "monthly",
+          "startDate": "2026-10-01",
+          "endDate": null,
+          "createdAt": "2026-10-22 07:22:44"
+        },
+        {
+          "id": "79176dbf-997d-418e-b8d0-5dbc9ddb6c25",
+          "clientId": "6e6af825-10bb-45bc-a5aa-d143be1e0bb8",
+          "clientName": "Northstar Studio",
+          "totalBudget": 8000,
+          "spent": 3833,
+          "remaining": 4167,
+          "percentage": 47.91,
+          "currency": "USD",
+          "period": "monthly",
+          "startDate": "2026-10-01",
+          "endDate": null,
+          "createdAt": "2026-10-22 07:22:43"
+        }
+      ]
+    },
+    "security": {
+      "events": [
+        {
+          "id": "700751e4-92d7-450e-9c7a-ec553ba770c2",
+          "clientId": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+          "clientName": "Luma Dental",
+          "type": "uptime_change",
+          "severity": "high",
+          "title": "Routine monitor item",
+          "description": "Seeded operational signal for the owner dashboard.",
+          "status": "open",
+          "detectedAt": "2026-10-22 07:18:56",
+          "resolvedAt": null
+        },
+        {
+          "id": "03c3f2e0-e1bd-434e-b34a-8dae2cbd73fe",
+          "clientId": "8dd6a429-71f7-4021-988d-2025ea870e4d",
+          "clientName": "Crestline Legal",
+          "type": "uptime_change",
+          "severity": "high",
+          "title": "Routine monitor item",
+          "description": "Seeded operational signal for the owner dashboard.",
+          "status": "open",
+          "detectedAt": "2026-10-22 07:18:56",
+          "resolvedAt": null
+        },
+        {
+          "id": "f404df07-f25a-41ee-954c-f050d2d96379",
+          "clientId": "6e6af825-10bb-45bc-a5aa-d143be1e0bb8",
+          "clientName": "Northstar Studio",
+          "type": "uptime_change",
+          "severity": "low",
+          "title": "Routine monitor item",
+          "description": "Seeded operational signal for the owner dashboard.",
+          "status": "open",
+          "detectedAt": "2026-10-22 07:18:55",
+          "resolvedAt": null
+        }
+      ],
+      "scores": [
+        {
+          "clientId": "6e6af825-10bb-45bc-a5aa-d143be1e0bb8",
+          "clientName": "Northstar Studio",
+          "grade": "A",
+          "score": 95,
+          "color": "#22c55e"
+        },
+        {
+          "clientId": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+          "clientName": "Luma Dental",
+          "grade": "C",
+          "score": 65,
+          "color": "#eab308"
+        },
+        {
+          "clientId": "8dd6a429-71f7-4021-988d-2025ea870e4d",
+          "clientName": "Crestline Legal",
+          "grade": "C",
+          "score": 65,
+          "color": "#eab308"
+        }
+      ]
+    },
+    "bugs": {
+      "events": [],
+      "scores": [
+        {
+          "clientId": "6e6af825-10bb-45bc-a5aa-d143be1e0bb8",
+          "clientName": "Northstar Studio",
+          "grade": "A",
+          "score": 95,
+          "color": "#22c55e"
+        },
+        {
+          "clientId": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+          "clientName": "Luma Dental",
+          "grade": "C",
+          "score": 65,
+          "color": "#eab308"
+        },
+        {
+          "clientId": "8dd6a429-71f7-4021-988d-2025ea870e4d",
+          "clientName": "Crestline Legal",
+          "grade": "C",
+          "score": 65,
+          "color": "#eab308"
+        }
+      ]
+    },
+    "uptime": {
+      "clients": [
+        {
+          "clientId": "6e6af825-10bb-45bc-a5aa-d143be1e0bb8",
+          "clientName": "Northstar Studio",
+          "uptimePercent": 100,
+          "avgResponseMs": 363,
+          "lastIncident": null,
+          "hourly": [
+            {
+              "day": 0,
+              "hour": 0,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 1,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 2,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 3,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 4,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 5,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 6,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 7,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 8,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 9,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 10,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 11,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 12,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 13,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 14,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 15,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 16,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 17,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 18,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 19,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 20,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 21,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 22,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 23,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 0,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 1,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 2,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 3,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 4,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 5,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 6,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 7,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 8,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 9,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 10,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 11,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 12,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 13,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 14,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 15,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 16,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 17,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 18,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 19,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 20,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 21,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 22,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 23,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 0,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 1,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 2,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 3,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 4,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 5,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 6,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 7,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 8,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 9,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 10,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 11,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 12,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 13,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 14,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 15,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 16,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 17,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 18,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 19,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 20,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 21,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 22,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 23,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 0,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 1,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 2,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 3,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 4,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 5,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 6,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 7,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 8,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 9,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 10,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 11,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 12,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 13,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 14,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 15,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 16,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 17,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 18,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 19,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 20,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 21,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 22,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 23,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 0,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 1,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 2,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 3,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 4,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 5,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 6,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 7,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 8,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 9,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 10,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 11,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 12,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 13,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 14,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 15,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 16,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 17,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 18,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 19,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 20,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 21,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 22,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 23,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 0,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 1,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 2,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 3,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 4,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 5,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 6,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 7,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 8,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 9,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 10,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 11,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 12,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 13,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 14,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 15,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 16,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 17,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 18,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 19,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 20,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 21,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 22,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 23,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 0,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 1,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 2,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 3,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 4,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 5,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 6,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 7,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 8,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 9,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 10,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 11,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 12,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 13,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 14,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 15,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 16,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 17,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 18,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 19,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 20,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 21,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 22,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 23,
+              "status": "up"
+            }
+          ]
+        },
+        {
+          "clientId": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+          "clientName": "Luma Dental",
+          "uptimePercent": 100,
+          "avgResponseMs": 104,
+          "lastIncident": null,
+          "hourly": [
+            {
+              "day": 0,
+              "hour": 0,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 1,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 2,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 3,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 4,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 5,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 6,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 7,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 8,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 9,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 10,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 11,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 12,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 13,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 14,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 15,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 16,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 17,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 18,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 19,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 20,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 21,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 22,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 23,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 0,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 1,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 2,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 3,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 4,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 5,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 6,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 7,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 8,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 9,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 10,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 11,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 12,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 13,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 14,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 15,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 16,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 17,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 18,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 19,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 20,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 21,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 22,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 23,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 0,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 1,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 2,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 3,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 4,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 5,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 6,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 7,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 8,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 9,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 10,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 11,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 12,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 13,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 14,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 15,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 16,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 17,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 18,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 19,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 20,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 21,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 22,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 23,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 0,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 1,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 2,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 3,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 4,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 5,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 6,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 7,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 8,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 9,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 10,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 11,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 12,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 13,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 14,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 15,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 16,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 17,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 18,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 19,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 20,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 21,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 22,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 23,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 0,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 1,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 2,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 3,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 4,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 5,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 6,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 7,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 8,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 9,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 10,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 11,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 12,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 13,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 14,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 15,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 16,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 17,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 18,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 19,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 20,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 21,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 22,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 23,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 0,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 1,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 2,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 3,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 4,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 5,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 6,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 7,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 8,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 9,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 10,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 11,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 12,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 13,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 14,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 15,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 16,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 17,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 18,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 19,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 20,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 21,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 22,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 23,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 0,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 1,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 2,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 3,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 4,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 5,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 6,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 7,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 8,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 9,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 10,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 11,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 12,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 13,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 14,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 15,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 16,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 17,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 18,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 19,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 20,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 21,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 22,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 23,
+              "status": "up"
+            }
+          ]
+        },
+        {
+          "clientId": "8dd6a429-71f7-4021-988d-2025ea870e4d",
+          "clientName": "Crestline Legal",
+          "uptimePercent": 100,
+          "avgResponseMs": 142,
+          "lastIncident": null,
+          "hourly": [
+            {
+              "day": 0,
+              "hour": 0,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 1,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 2,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 3,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 4,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 5,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 6,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 7,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 8,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 9,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 10,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 11,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 12,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 13,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 14,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 15,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 16,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 17,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 18,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 19,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 20,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 21,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 22,
+              "status": "up"
+            },
+            {
+              "day": 0,
+              "hour": 23,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 0,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 1,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 2,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 3,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 4,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 5,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 6,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 7,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 8,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 9,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 10,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 11,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 12,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 13,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 14,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 15,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 16,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 17,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 18,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 19,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 20,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 21,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 22,
+              "status": "up"
+            },
+            {
+              "day": 1,
+              "hour": 23,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 0,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 1,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 2,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 3,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 4,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 5,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 6,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 7,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 8,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 9,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 10,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 11,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 12,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 13,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 14,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 15,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 16,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 17,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 18,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 19,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 20,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 21,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 22,
+              "status": "up"
+            },
+            {
+              "day": 2,
+              "hour": 23,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 0,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 1,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 2,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 3,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 4,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 5,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 6,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 7,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 8,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 9,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 10,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 11,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 12,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 13,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 14,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 15,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 16,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 17,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 18,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 19,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 20,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 21,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 22,
+              "status": "up"
+            },
+            {
+              "day": 3,
+              "hour": 23,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 0,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 1,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 2,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 3,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 4,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 5,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 6,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 7,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 8,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 9,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 10,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 11,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 12,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 13,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 14,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 15,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 16,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 17,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 18,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 19,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 20,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 21,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 22,
+              "status": "up"
+            },
+            {
+              "day": 4,
+              "hour": 23,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 0,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 1,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 2,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 3,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 4,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 5,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 6,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 7,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 8,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 9,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 10,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 11,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 12,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 13,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 14,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 15,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 16,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 17,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 18,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 19,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 20,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 21,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 22,
+              "status": "up"
+            },
+            {
+              "day": 5,
+              "hour": 23,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 0,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 1,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 2,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 3,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 4,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 5,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 6,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 7,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 8,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 9,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 10,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 11,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 12,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 13,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 14,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 15,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 16,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 17,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 18,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 19,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 20,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 21,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 22,
+              "status": "up"
+            },
+            {
+              "day": 6,
+              "hour": 23,
+              "status": "up"
+            }
+          ]
+        }
+      ]
+    },
+    "requests": {
+      "requests": [
+        {
+          "id": "e4dc9427-722f-49c3-9de3-f2ebe8688747",
+          "clientId": "6bd21c06-780b-45de-9fbf-00b02ab0e75e",
+          "clientName": "Luma Dental",
+          "message": "Can we add a clearer CTA above the fold?",
+          "status": "open",
+          "createdAt": "2026-10-20 07:18:56"
+        },
+        {
+          "id": "5f0de49b-ab3c-4745-a96e-269e0b6bac5e",
+          "clientId": "8dd6a429-71f7-4021-988d-2025ea870e4d",
+          "clientName": "Crestline Legal",
+          "message": "Can we add a clearer CTA above the fold?",
+          "status": "open",
+          "createdAt": "2026-10-20 07:18:56"
+        },
+        {
+          "id": "5da3b3d9-32aa-4d47-8b61-b3c744302427",
+          "clientId": "6e6af825-10bb-45bc-a5aa-d143be1e0bb8",
+          "clientName": "Northstar Studio",
+          "message": "Can we add a clearer CTA above the fold?",
+          "status": "open",
+          "createdAt": "2026-10-20 07:18:55"
+        }
+      ]
+    }
+  }
+}

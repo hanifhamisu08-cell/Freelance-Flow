@@ -34,3 +34,9 @@ php artisan serve
 On macOS or Linux, use `cp .env.example .env` instead of `copy .env.example .env`. Open `http://127.0.0.1:8000` and register an account to view the dashboard.
 
 The local `.env` file, SQLite database, installed dependencies, and compiled Vite output are excluded from the project copy. Do not commit `.env` or production secrets.
+
+## Vercel Laravel demo
+
+Vercel runs the Laravel application through the community PHP runtime configured in `vercel.json`. The PHP entry point boots Laravel, the page is rendered from `resources/views/app.blade.php`, and the demo API is handled by `DemoPreviewController`. Vite builds the interface into Laravel's `public/build` folder.
+
+The hosted coursework demo uses fixed sample data from `static/demo-data.json`; it does not connect to a database, and changes made while exploring are not saved. Use the **Freelancer** and **Business Owner** demo buttons on the sign-in page to explore both sides. For local development, the full Laravel API and SQLite setup remain available as described above.

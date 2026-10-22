@@ -132,7 +132,9 @@ function Footer() {
           <span>Stage 1 · Live dashboards</span>
           <span className="text-amber">Stage 2 · Qwen autopilot</span>
           <a
-            href="/api/download"
+            href={import.meta.env.MODE === "preview" ? "https://github.com/hanifhamisu08-cell/Freelance-Flow" : "/api/download"}
+            target={import.meta.env.MODE === "preview" ? "_blank" : undefined}
+            rel={import.meta.env.MODE === "preview" ? "noreferrer" : undefined}
             className="group inline-flex items-center gap-1 rounded-full bg-panel-2 px-2 py-0.5 text-foreground transition-all hover:text-teal hover:shadow-[0_0_14px_-4px_var(--icon-glow-color)] icon-interactive"
             title="Download the full project source as a .zip"
           >

@@ -42,6 +42,10 @@ export function TopBar() {
   }, [useApp((s) => s.refreshTick)]);
 
   const handleSeed = async () => {
+    if (import.meta.env.MODE === "preview") {
+      toast("Sample demo data is ready. This hosted preview does not use a database.");
+      return;
+    }
     setSeeding(true);
     try {
       const r = await api.seed();

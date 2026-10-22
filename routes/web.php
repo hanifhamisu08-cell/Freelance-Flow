@@ -5,6 +5,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FreelanceFlowController::class, 'app']);
 
+// A server-rendered Laravel shell is used for the Vercel coursework preview.
+if (env('APP_PREVIEW', false)) {
+    Route::fallback(fn () => redirect('/'));
+    return;
+}
+
 Route::prefix('api')->controller(FreelanceFlowController::class)->group(function () {
     Route::get('/auth/me', 'me');
     Route::post('/auth/register', 'register');
